@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    cursor: pointer;
+}
+
+.imageWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add box-shadow to the transition */
+}
+
+.projectTitle {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 16px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.container:hover {
+
+}
+
+.container:hover .projectTitle {
+    opacity: 1; /* Display on container hover */
+}
+
+.container:hover .image {
+    opacity: 0.7;
+}

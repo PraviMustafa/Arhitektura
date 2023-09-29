@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: start;
+    gap: 5px;
+}
+
+.items1 {
+    display: flex;
+    flex-direction: column;
+    flex: 65vw;
+    gap: 5px;
+}
+
+.items2 {
+    display: flex;
+    flex-direction: column;
+    flex: 35vw;
+    gap: 5px;
+}

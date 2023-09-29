@@ -1,95 +1,90 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+import ImageSlideShow from "@/components/image_slide_show/ImageSlideShow";
+
+//hero section images
+import Hero from "public/hero.jpg";
+
+//first current project images
+import I1_p1 from "public/img1_project_1.jpg"
+import I2_p1 from "public/img2_project_1.jpg"
+
+import Recent from "@/components/recent_projects/Recent";
+import Recent_reverse from "@/components/recent_projects_reverse/Recent_reverse";
+
+const images = [
+    Hero,
+    I1_p1,
+    I2_p1,
+    // Add more image paths as needed
+];
+
+export default function Home({}) {
+
+    return (
+        <div className={styles.container}>
+            <section className={styles.hero}>
+                <div className={styles.imageWrap}>
+                    <ImageSlideShow images={images} />
+                </div>
+            </section>
+
+            <section>
+                <Recent
+                    day={9}
+                    month={"mart"}
+                    year={2023}
+                    status={"Completion"}
+                    project={"skyline"}
+                    city={"Belgrade"}
+                    country={"Serbia"}
+
+                    img_hero={Hero}
+                    img1_project1={I1_p1}
+                    img2_project1={I2_p1}
+                    />
+
+                <Recent_reverse
+                    day={9}
+                    month={"mart"}
+                    year={2023}
+                    status={"Completion"}
+                    project={"skyline"}
+                    city={"Belgrade"}
+                    country={"Serbia"}
+
+                    img_hero={Hero}
+                    img1_project1={I1_p1}
+                />
+
+                <Recent
+                    day={9}
+                    month={"mart"}
+                    year={2023}
+                    status={"Completion"}
+                    project={"skyline"}
+                    city={"Belgrade"}
+                    country={"Serbia"}
+
+                    img_hero={Hero}
+                    img1_project1={I1_p1}
+                    img2_project1={I2_p1}
+                    />
+
+                <Recent_reverse
+                    day={9}
+                    month={"mart"}
+                    year={2023}
+                    status={"Completion"}
+                    project={"skyline"}
+                    city={"Belgrade"}
+                    country={"Serbia"}
+
+                    img_hero={Hero}
+                    img1_project1={I1_p1}
+                />
+            </section>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    )
 }

@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.items {
+    flex: 1;
+}

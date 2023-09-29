@@ -1,0 +1,20 @@
+.container {
+    z-index: 999;
+    position: fixed;
+    bottom: 50px;
+    right: 70px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.link {
+    font-size: 28px;
+}
+
+.link:hover {
+    opacity: 70%;
+}
