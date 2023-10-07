@@ -1,7 +1,13 @@
-.container {
-    display: flex;
-}
+.container > div { flex: 1; }
 
-.items {
-    flex: 1;
+.descriptionWrap > div {
+    padding: 40px;
+    position: sticky;
+    top: 50vh;
+}
+.descriptionWrap:hover { opacity: 0.7; }
+
+.imagesWrap img {
+    width: calc(100vw - (100vw - 100%));
+    height: auto;
 }

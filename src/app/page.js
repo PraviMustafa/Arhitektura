@@ -1,7 +1,9 @@
-import Image from 'next/image'
 import styles from './page.module.css'
 
-import ImageSlideShow from "@/components/image_slide_show/ImageSlideShow";
+import { ImageSlideShow } from '@components/client';
+import { Recent } from '@components/server';
+
+import projects from '@projects';
 
 //hero section images
 import Hero from "public/hero.jpg";
@@ -9,9 +11,6 @@ import Hero from "public/hero.jpg";
 //first current project images
 import I1_p1 from "public/img1_project_1.jpg"
 import I2_p1 from "public/img2_project_1.jpg"
-
-import Recent from "@/components/recent_projects/Recent";
-import Recent_reverse from "@/components/recent_projects_reverse/Recent_reverse";
 
 const images = [
     Hero,
@@ -24,66 +23,26 @@ export default function Home({}) {
 
     return (
         <div className={styles.container}>
-            <section className={styles.hero}>
-                <div className={styles.imageWrap}>
-                    <ImageSlideShow images={images} />
-                </div>
+            <section className='full-screen'>
+                <ImageSlideShow images={images} />
             </section>
 
             <section>
-                <Recent
-                    day={9}
-                    month={"mart"}
-                    year={2023}
-                    status={"Completion"}
-                    project={"skyline"}
-                    city={"Belgrade"}
-                    country={"Serbia"}
-
-                    img_hero={Hero}
-                    img1_project1={I1_p1}
-                    img2_project1={I2_p1}
-                    />
-
-                <Recent_reverse
-                    day={9}
-                    month={"mart"}
-                    year={2023}
-                    status={"Completion"}
-                    project={"skyline"}
-                    city={"Belgrade"}
-                    country={"Serbia"}
-
-                    img_hero={Hero}
-                    img1_project1={I1_p1}
-                />
-
-                <Recent
-                    day={9}
-                    month={"mart"}
-                    year={2023}
-                    status={"Completion"}
-                    project={"skyline"}
-                    city={"Belgrade"}
-                    country={"Serbia"}
-
-                    img_hero={Hero}
-                    img1_project1={I1_p1}
-                    img2_project1={I2_p1}
-                    />
-
-                <Recent_reverse
-                    day={9}
-                    month={"mart"}
-                    year={2023}
-                    status={"Completion"}
-                    project={"skyline"}
-                    city={"Belgrade"}
-                    country={"Serbia"}
-
-                    img_hero={Hero}
-                    img1_project1={I1_p1}
-                />
+                {/* mora .map ovde, nije radilo jer sam koristio .forEach */}
+                { projects.map((project, index) => 
+                    <Recent
+                        key={index}
+                        project={project.project}                   
+                        country={project.country}   
+                        city={project.city}
+                        date={project.date}
+                        status={project.status}
+                        images={project.images}
+                        isImportant={project.isImportant}
+                        isReverse={ index % 2 === 0 ? false : true }
+                    >
+                    </Recent>
+                )}
             </section>
         </div>
     )

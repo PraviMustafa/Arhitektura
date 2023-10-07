@@ -1,9 +1,7 @@
 import './globals.css'
 import {Inter, Roboto} from 'next/font/google'
 
-import Navbar from "@/components/navbar/Navbar";
-import Logo from "@/components/logo/Logo";
-import Footer from "@/components/footer/Footer"
+import { Navbar, Logo, Footer } from '@components/server';
 
 const inter = Inter({subsets: ['latin']})
 

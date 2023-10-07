@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import styles from "@/components/logo/logo.module.css";
+import styles from './logo.module.css';
 
 import {Roboto} from 'next/font/google'
 

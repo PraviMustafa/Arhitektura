@@ -1,24 +1,32 @@
 import React from 'react';
-import ProjectImage from "@/components/project_image/ProjectImage";
-
 import styles from "./recent.module.css";
-import Description from "@/components/description/Description";
+import Image from "next/image";
 
-function Recent({day, month, year, status, project, city, country,
-                    img_hero,
-                    img1_project1,
-                    img2_project1}) {
+function Recent({ project, country, city, date, status, images, isImportant, isReverse }) {
     return (
-        <div className={styles.container}>
-            <div className={styles.items}>
-                <Description day={day} month={month} year={year} status={status} project={project} city={city} country={country}/>
-            </div>
-            <div className={styles.items}>
+        <div className={styles.container + ' cursor-pointer flex' + (isReverse ? ' flex-row-reverse' : '')}>
+            <div className={styles.descriptionWrap}>
                 <div>
-                    <ProjectImage image={img_hero}/>
-                    <ProjectImage image={img1_project1}/>
-                    <ProjectImage image={img2_project1}/>
+                    <p>{date}</p>
+                    <h1>{status}</h1>
+                    <h2>{project}, {city}, {country}</h2>
                 </div>
+            </div>
+            <div className={styles.imagesWrap}>
+                { images.map((image, i) => 
+                    /* Ovaj Image se drugacije ponasa ako dobije putanju src={'../public...' }
+                    onda trazi width i height (posle pregazi css)
+                    Ako uradimo import Hero from '../public...' na vrhu fajla
+                    pa onda src={Hero} onda ne trazi, valjda sam detektuje */
+                    // nije najbolje da je key = i ali manje bitno sad
+                    <Image
+                        key={i}
+                        src={image}
+                        alt={""}
+                        width={1000}
+                        height={1000}
+                    />
+                )}
             </div>
         </div>
     );
