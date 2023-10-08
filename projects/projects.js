@@ -7,7 +7,8 @@
 // NOTE: date in american format
 const projects = [
   {
-    project: 'skyline',
+    id: 0,
+    name: 'skyline',
     country: 'Serbia',
     city: 'Belgrade',
     date: new Date('03.10.2023'),
@@ -20,7 +21,8 @@ const projects = [
     isImportant: false
   },
   {
-    project: 'skyline',
+    id: 1,
+    name: 'skyline',
     country: 'Serbia',
     city: 'Belgrade',
     date: new Date('08.12.2023'),
@@ -33,7 +35,8 @@ const projects = [
     isImportant: false
   },
   {
-    project: 'skyline',
+    id: 2,
+    name: 'skyline',
     country: 'Serbia',
     city: 'Belgrade',
     date: new Date('01.16.2020'),

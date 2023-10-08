@@ -28,20 +28,8 @@ export default function Home({}) {
             </section>
 
             <section>
-                {/* mora .map ovde, nije radilo jer sam koristio .forEach */}
                 { projects.map((project, index) => 
-                    <Recent
-                        key={index}
-                        project={project.project}                   
-                        country={project.country}   
-                        city={project.city}
-                        date={project.date}
-                        status={project.status}
-                        images={project.images}
-                        isImportant={project.isImportant}
-                        isReverse={ index % 2 === 0 ? false : true }
-                    >
-                    </Recent>
+                    <Recent key={project.id} project={project} isReverse={ index % 2 === 0 ? false : true }></Recent>
                 )}
             </section>
         </div>

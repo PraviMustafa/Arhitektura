@@ -2,18 +2,19 @@ import React from 'react';
 import styles from "./recent.module.css";
 import Image from "next/image";
 
-function Recent({ project, country, city, date, status, images, isImportant, isReverse }) {
+function Recent({ project, isReverse }) {
+    const { name, country, city, date, status, images, isImportant } = project;
     return (
         <div className={styles.container + ' cursor-pointer flex' + (isReverse ? ' flex-row-reverse' : '')}>
             <div className={styles.descriptionWrap}>
                 <div>
                     <p>{date}</p>
                     <h1>{status}</h1>
-                    <h2>{project}, {city}, {country}</h2>
+                    <h2>{name}, {city}, {country}</h2>
                 </div>
             </div>
             <div className={styles.imagesWrap}>
-                { images.map((image, i) => 
+                { images.map((imageSrc, i) => 
                     /* Ovaj Image se drugacije ponasa ako dobije putanju src={'../public...' }
                     onda trazi width i height (posle pregazi css)
                     Ako uradimo import Hero from '../public...' na vrhu fajla
@@ -21,7 +22,7 @@ function Recent({ project, country, city, date, status, images, isImportant, isR
                     // nije najbolje da je key = i ali manje bitno sad
                     <Image
                         key={i}
-                        src={image}
+                        src={imageSrc}
                         alt={""}
                         width={1000}
                         height={1000}
