@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./projects.module.css";
 
-import ProjectItem from '@components/server';
+import { ProjectItem } from '@components/server';
 
 import I1_p1 from "public/img1_project_1.jpg";
 import I2_p1 from "public/img2_project_1.jpg";
