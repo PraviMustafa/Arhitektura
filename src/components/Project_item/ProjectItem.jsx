@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./project_item.module.css";
+import styles from "./projectItem.module.css";
 import Image from "next/image";
 
 function ProjectItem({ image, projectName }) {

@@ -4,7 +4,7 @@
 // trenutna putanja slike je u odnosu na domen a ne u odnosu na fajl sistem. http://localhost:3000/hero.jpg
 // zato sto je sve iz public foldera dostupno tu
 
-// NOTE: date in american format
+// NOTE: date format mm/dd/yyyy
 const projects = [
   {
     id: 0,
