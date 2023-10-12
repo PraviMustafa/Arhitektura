@@ -1,8 +1,10 @@
 import React from 'react';
-import Link from "next/link";
+import Link from 'next/link';
 import styles from "./navbar.module.css";
 
-import {Roboto} from 'next/font/google'
+import {Roboto} from 'next/font/google';
+
+import { useTranslations } from 'next-intl';
 
 const roboto = Roboto({
     weight: ['500'],
@@ -11,25 +13,27 @@ const roboto = Roboto({
     display: 'swap',
 })
 
-const links = [
-    {
-        id: 1,
-        title: "Team",
-        url: "/team",
-    },
-    {
-        id: 2,
-        title: "Projects",
-        url: "/projects",
-    },
-    {
-        id: 3,
-        title: "Contacts",
-        url: "/contacts",
-    },
-];
-
 function Navbar() {
+    const t = useTranslations('NAVBAR');
+
+    const links = [
+        {
+            id: 1,
+            title: `${t('team')}`,
+            url: "/team",
+        },
+        {
+            id: 2,
+            title: `${t('projects')}`,
+            url: "/projects",
+        },
+        {
+            id: 3,
+            title: `${t('contacts')}`,
+            url: "/contacts",
+        },
+    ];
+
     return (
         <div className={roboto.className}>
             <div className={styles.container}>

@@ -2,9 +2,10 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
+      "@projects": ["./projects/Projects.js"],
+      "@constants": ["./src/constants/constants.js"],
       "@components/client": ["./src/components/client.index.js"],
       "@components/server": ["./src/components/server.index.js"],
-      "@projects": ["./projects/projects.js"],
     }
   }
 }

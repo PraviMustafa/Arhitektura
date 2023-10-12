@@ -1,0 +1,28 @@
+.container {
+  position: fixed;
+  top: 25px;
+  right: 15px;
+  z-index: 999;
+  border: 1px solid black;
+}
+
+.container img {
+  display: flex;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.inactiveLanguages {
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  transform: translateY(15px);
+  opacity: 0;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(5px);
+    pointer-events: all;
+  }
+}

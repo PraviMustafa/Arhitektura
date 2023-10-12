@@ -1,0 +1,45 @@
+{
+  "NAVBAR": {
+    "team": "Team",
+    "projects": "Projects",
+    "contacts": "Contacts"
+  },
+  "HOME_PAGE": {
+    "metadata": {
+      "title": "Best architect",
+      "description": "Description"
+    },
+    "other": {
+      "test": "test eng"
+    }
+  },
+  "CONTACTS": {
+    "metadata": {
+      "title": "Contacts",
+      "description": "Description"
+    },
+    "other": {
+      "test": "test srp"
+    }
+  },
+  "PROJECTS": {
+    "metadata": {
+      "title": "Projects",
+      "description": "Description"
+    },
+    "other": {
+      "test": "test srp"
+    }
+  },
+  "TEAM": {
+    "metadata": {
+      "title": "Team",
+      "description": "Description"
+    },
+    "other": {
+      "test": "test srp"
+    }
+  },
+  "COMMON": {
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "NAVBAR": {
+    "team": "Tim",
+    "projects": "Projekti",
+    "contacts": "Kontakti"
+  },
+  "HOME_PAGE": {
+    "metadata": {
+      "title": "Najbolji arhitekta",
+      "description": "Opis"
+    },
+    "other": {
+      "test": "test srp"
+    }
+  },
+  "CONTACTS": {
+    "metadata": {
+      "title": "Kontakti",
+      "description": "Opis"
+    },
+    "other": {
+      "test": "test srp"
+    }
+  },
+  "PROJECTS": {
+    "metadata": {
+      "title": "Projekti",
+      "description": "Opis"
+    },
+    "other": {
+      "test": "test srp"
+    }
+  },
+  "TEAM": {
+    "metadata": {
+      "title": "Tim",
+      "description": "Opis"
+    },
+    "other": {
+      "test": "test srp"
+    }
+  },
+  "COMMON": {
+  }
+}

@@ -5,6 +5,7 @@ import Image from "next/image";
 function Recent({ project, isReverse }) {
     const { name, country, city, date, status, images, isImportant } = project;
     return (
+        isImportant && 
         <div className={styles.container + ' cursor-pointer flex' + (isReverse ? ' flex-row-reverse' : '')}>
             <div className={styles.descriptionWrap}>
                 <div>

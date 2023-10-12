@@ -1,9 +1,11 @@
 import styles from './page.module.css'
 
+import Projects from '@projects';
 import { ImageSlideShow } from '@components/client';
 import { Recent } from '@components/server';
 
-import projects from '@projects';
+import { getTranslator } from 'next-intl/server';
+import { headers } from 'next/headers';
 
 //hero section images
 import Hero from "public/hero.jpg";
@@ -19,10 +21,22 @@ const images = [
     // Add more image paths as needed
 ];
 
-export default function Home({}) {
+export async function generateMetadata({ params: { locale }}) {
+  const t = await getTranslator(locale, 'HOME_PAGE.metadata');
+  const url = headers().get('X-URL');
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: url
+    }
+  };
+}
 
+export default async function Home({ params: { locale }}) {
+  const projects = Projects.getLocalizedProjects(locale);
     return (
-        <div className={styles.container}>
+        <>
             <section className='full-screen'>
                 <ImageSlideShow images={images} />
             </section>
@@ -32,6 +46,6 @@ export default function Home({}) {
                     <Recent key={project.id} project={project} isReverse={ index % 2 === 0 ? false : true }></Recent>
                 )}
             </section>
-        </div>
+        </>
     )
 }
